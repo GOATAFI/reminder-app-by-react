@@ -1,3 +1,9 @@
 export default function Reminder(props) {
-  return <div>Reminder</div>;
+  return (
+    <div>
+      Item : {props.reminderText}
+      Due Date : {props.dueDate}
+      Completed ? : {String(props.isComplete)}
+    </div>
+  );
 }
