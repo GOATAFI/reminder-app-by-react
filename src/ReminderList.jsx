@@ -1,28 +1,16 @@
 import Reminder from "./Reminder";
 
 export default function ReminderList(props) {
-  return (
-    <div>
+  const reminders = props.reminders.map((reminder, index) => {
+    return (
       <Reminder
-        reminderText="pick up Mafi"
-        dueDate="2024-01-15"
-        isComplete={false}
+        reminderText={reminder.reminderText}
+        dueDate={reminder.dueDate}
+        isComplete={reminder.isComplete}
+        id={index}
+        key={index}
       />
-      <Reminder
-        reminderText="pick up Mafi"
-        dueDate="2024-01-15"
-        isComplete={false}
-      />
-      <Reminder
-        reminderText="pick up Mafi"
-        dueDate="2024-01-15"
-        isComplete={false}
-      />
-      <Reminder
-        reminderText="pick up Mafi"
-        dueDate="2024-01-15"
-        isComplete={false}
-      />
-    </div>
-  );
+    );
+  });
+  return <div>{reminders}</div>;
 }
